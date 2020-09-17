@@ -4,21 +4,42 @@
 trigger:
   - none
 
+- stage: Build
+  jobs:
+  #######################
+  # Native Builds
+  #######################
+    - template: ./templates/build.yml
+      parameters: 
+        Name: Windows
+        Target: windows-latest
+
+    - template: ./templates/build.yml
+      parameters: 
+        Name: macOS
+        Target: macOS-latest
+
+    - template: ./templates/build.yml
+      parameters: 
+        Name: Linux
+        Target: ubuntu-latest
+
+- stage: Test
 jobs:
 #######################
 # Native Builds
 #######################
-  - template: ./templates/build.yml
+  - template: ./templates/test.yml
     parameters: 
       Name: Windows
       Target: windows-latest
 
-  - template: ./templates/build.yml
+  - template: ./templates/test.yml
     parameters: 
       Name: macOS
       Target: macOS-latest
 
-  - template: ./templates/build.yml
+  - template: ./templates/test.yml
     parameters: 
       Name: Linux
       Target: ubuntu-latest

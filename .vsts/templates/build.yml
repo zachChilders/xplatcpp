@@ -20,4 +20,4 @@ jobs:
     - powershell: ./scripts/build.ps1
       displayName: Build
     - publish: $(System.DefaultWorkingDirectory)/out
-      artifact: out 
+      artifact: out_${{ parameters.Name }}
