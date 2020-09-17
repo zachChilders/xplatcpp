@@ -6,10 +6,9 @@ parameters:
 - name: Target
   displayName: 'Host Operating System'
   type: string
-  default: ubuntu-latest
 
 jobs:
-- job: build_${{ parameters.Target }}
+- job: build_${{ parameters.Name }}
   displayName: Build ${{ parameters.Name }}
   pool: 
     vmImage: ${{ parameters.Target }}
