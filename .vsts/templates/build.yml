@@ -15,5 +15,7 @@ jobs:
   steps:
     - checkout: self
       submodules: true
+    - powershell: ./scripts/init.ps1 -TargetOS ${{ parameters.Name }}
+      displayName: Init build machine
     - powershell: ./scripts/build.ps1
       displayName: Build
