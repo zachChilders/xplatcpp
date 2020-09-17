@@ -5,6 +5,5 @@ if ([String]::IsNullOrEmpty($TargetName)) {
     $outputDir = "./out"
 } else {
     $outputDir = "../out_$TargetName"
-    ls $outputDir
 }
-& "$outputDir/bin/wp.client"
+Invoke-Expression "$outputDir/bin/wp.client"
