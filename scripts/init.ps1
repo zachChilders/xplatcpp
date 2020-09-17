@@ -1,5 +1,5 @@
 Param(
-    [Mandatory] $TargetOS
+    $TargetOS
 )
 
 switch ($TargetOS) {
