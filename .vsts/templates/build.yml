@@ -1,0 +1,20 @@
+parameters:
+- name: Name
+  displayName: 'Build Name'
+  type: string
+
+- name: Target
+  displayName: 'Host Operating System'
+  type: string
+  default: ubuntu-latest
+
+jobs:
+- job: build_${{ parameters.Target }}
+  displayName: Build ${{ parameters.Name }}
+  pool: 
+    vmImage: ${{ parameters.Target }}
+  steps:
+    - checkout: self
+      submodules: true
+    - powershell: ./scripts/build.ps1
+      displayName: Build

@@ -1,0 +1,67 @@
+#######################
+# Master Pipeline File
+#######################
+trigger:
+  - none
+
+jobs:
+#######################
+# Native Builds
+#######################
+  - template: ./templates/build.yaml
+    parameters: 
+      Name: Windows
+      HostOs: windows-latest
+
+  - template: ./templates/build.yaml
+    parameters: 
+      Name: Windows32Bit
+      HostOs: windows-latest
+
+  - template: ./templates/build.yaml
+    parameters: 
+      Name: macOS
+      HostOs: macOS-latest
+
+  - template: ./templates/build.yaml
+    parameters: 
+      Name: Linux
+      HostOs: ubuntu-latest
+
+#######################
+# Linting & Coverage
+#######################
+  # - job: clippy
+  #   displayName: Linting
+  #   pool:
+  #     vmImage: ubuntu-latest
+  #   steps:
+  #     - checkout: self
+  #       submodules: true
+  #     - powershell: ./scripts/lint.ps1
+  #       displayName: Clippy
+
+  # - job: rustfmt
+  #   displayName: Formatting
+  #   pool:
+  #     vmImage: ubuntu-latest
+  #   steps:
+  #     - checkout: self
+  #       submodules: true
+  #     - powershell: rustup component add rustfmt && cargo fmt -- --check
+  #       displayName: Rustfmt - Run "cargo fmt" if this fails.
+
+  # - job: coverage
+  #   displayName: Code Coverage
+  #   pool:
+  #     vmImage: ubuntu-latest
+  #   steps:
+  #     - checkout: self
+  #       submodules: true
+  #     - powershell: ./scripts/test_coverage.ps1
+  #       displayName: Tarpaulin
+  #     - task: PublishCodeCoverageResults@1
+  #       displayName: Code Coverage
+  #       inputs:
+  #         codeCoverageTool: 'cobertura'
+  #         summaryFileLocation: ./cobertura.xml
