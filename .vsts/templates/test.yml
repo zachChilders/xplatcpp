@@ -17,5 +17,5 @@ jobs:
       submodules: true
     - download: current
       artifact: out_${{ parameters.Name }}
-    - powershell: ./scripts/test.ps1 -TargetName ${{Pipeline.Workspace}}_${{ parameters.Name }}
+    - powershell: ./scripts/test.ps1 -TargetName ${{ parameters.Name }}
       displayName: Test
