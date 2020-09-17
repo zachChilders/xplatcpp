@@ -15,11 +15,6 @@ jobs:
 
   - template: ./templates/build.yml
     parameters: 
-      Name: Windows32Bit
-      Target: windows-latest
-
-  - template: ./templates/build.yml
-    parameters: 
       Name: macOS
       Target: macOS-latest
 
