@@ -4,10 +4,11 @@
 trigger:
   - none
 
+stages:
 - stage: Build
   jobs:
   #######################
-  # Native Builds
+  # Builds
   #######################
     - template: ./templates/build.yml
       parameters: 
@@ -25,24 +26,24 @@ trigger:
         Target: ubuntu-latest
 
 - stage: Test
-jobs:
-#######################
-# Native Builds
-#######################
-  - template: ./templates/test.yml
-    parameters: 
-      Name: Windows
-      Target: windows-latest
+  jobs:
+  #######################
+  # Tests
+  #######################
+    - template: ./templates/test.yml
+      parameters: 
+        Name: Windows
+        Target: windows-latest
 
-  - template: ./templates/test.yml
-    parameters: 
-      Name: macOS
-      Target: macOS-latest
+    - template: ./templates/test.yml
+      parameters: 
+        Name: macOS
+        Target: macOS-latest
 
-  - template: ./templates/test.yml
-    parameters: 
-      Name: Linux
-      Target: ubuntu-latest
+    - template: ./templates/test.yml
+      parameters: 
+        Name: Linux
+        Target: ubuntu-latest
 
 #######################
 # Linting & Coverage
