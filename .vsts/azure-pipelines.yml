@@ -11,22 +11,22 @@ jobs:
   - template: ./templates/build.yml
     parameters: 
       Name: Windows
-      HostOs: windows-latest
+      Target: windows-latest
 
   - template: ./templates/build.yml
     parameters: 
       Name: Windows32Bit
-      HostOs: windows-latest
+      Target: windows-latest
 
   - template: ./templates/build.yml
     parameters: 
       Name: macOS
-      HostOs: macOS-latest
+      Target: macOS-latest
 
   - template: ./templates/build.yml
     parameters: 
       Name: Linux
-      HostOs: ubuntu-latest
+      Target: ubuntu-latest
 
 #######################
 # Linting & Coverage
