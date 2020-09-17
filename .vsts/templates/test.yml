@@ -1,0 +1,21 @@
+parameters:
+- name: Name
+  displayName: 'Build Name'
+  type: string
+
+- name: Target
+  displayName: 'Host Operating System'
+  type: string
+
+jobs:
+- job: build_${{ parameters.Name }}
+  displayName: Test ${{ parameters.Name }}
+  pool: 
+    vmImage: ${{ parameters.Target }}
+  steps:
+    - checkout: self
+      submodules: true
+    - download: current
+      artifact: out_${{ parameters.Name }}
+    - powershell: ./scripts/test.ps1
+      displayName: Test
