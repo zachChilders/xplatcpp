@@ -13,8 +13,7 @@ jobs:
   pool: 
     vmImage: ${{ parameters.Target }}
   steps:
-    - checkout: self
-      submodules: true
+    - checkout: none
     - download: current
       artifact: out_${{ parameters.Name }}
     - powershell: ./scripts/test.ps1 -TargetName ${{ parameters.Name }}

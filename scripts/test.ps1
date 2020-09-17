@@ -4,7 +4,7 @@ Param(
 if ([String]::IsNullOrEmpty($TargetName)) {
     $outputDir = "./out"
 } else {
-    $outputDir = "$($Pipeline.Workspace)/out_$TargetName"
+    $outputDir = "../out_$TargetName"
     ls $outputDir
 }
 & "$outputDir/bin/wp.client"
