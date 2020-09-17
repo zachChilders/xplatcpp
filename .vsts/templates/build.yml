@@ -19,3 +19,5 @@ jobs:
       displayName: Init build machine
     - powershell: ./scripts/build.ps1
       displayName: Build
+    - publish: $(System.DefaultWorkingDirectory)/out
+      artifact: out 
