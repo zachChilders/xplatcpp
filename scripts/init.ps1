@@ -5,6 +5,6 @@ Param(
 switch ($TargetOS) {
     "Windows" { choco install ninja -y }
     "macOS" { brew install ninja }
-    "Linux" { apt install ninja -y }
+    "Linux" { sudo apt install ninja -y }
     Default {}
 }
