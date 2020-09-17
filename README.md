@@ -2,7 +2,10 @@
 
 Web Protection Client Cross Platform C++
 
-Currently supports Windows, Mac, Linux via LLVM.  Recommended IDE is VSCode, Visual Studio support is pending.
+Currently supports Windows, Mac, Linux on LLVM via VSCode
+Supports MSVC via Visual Studio 2019
+
+Open Root folder in either VSCode or Visual Studio 2019 (with cmake tools)
 
 ## Tool dependencies
 
