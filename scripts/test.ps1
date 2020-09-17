@@ -6,5 +6,8 @@ if ([String]::IsNullOrEmpty($TargetName)) {
 } else {
     $outputDir = "../out_$TargetName"
 }
-chmod +x "$outputDir/bin/wp.client"
+
+if ($TargetName -ne "Windows" -or $TargetName -ne "") {
+    chmod +x "$outputDir/bin/wp.client"
+}
 Start-Process "$outputDir/bin/wp.client"
