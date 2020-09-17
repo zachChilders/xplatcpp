@@ -1,4 +1,4 @@
 
 file(GLOB SOURCES *.cpp *.h *.rc ../inc/*.h )
 
-add_executable(SmartScreen main.cpp)
+add_executable(wp.client main.cpp)
