@@ -1,6 +1,6 @@
-# WP.Client
+# Xplat C++
 
-Web Protection Client Cross Platform C++
+Cross Platform C++ Template
 
 Currently supports Windows, Mac, Linux on LLVM via VSCode
 Supports MSVC via Visual Studio 2019
@@ -17,4 +17,4 @@ Run `./scripts/build.ps1` to build for your OS.  It will automatically run `./sc
 
 ## Testing
 
-At this time, `./out/bin/wp.client.exe` is run and will fail the pipeline if it fails.
+At this time, `./out/bin/test.exe` is run and will fail the pipeline if it fails.
